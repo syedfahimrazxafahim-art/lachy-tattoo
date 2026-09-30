@@ -1,0 +1,6 @@
+{
+  "name": "Lachy Tattoo | Custom Tattoo Artist Las Vegas, NV",
+  "description": "Premium custom tattoo artist in Las Vegas, Nevada specializing in black & grey realism, fine line, portraits, and custom tattoo craftsmanship. Book your session with Lachy Tattoo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+@layer base {
+  body {
+    background-color: #070709;
+    color: #f4f4f6;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Corner Button Aesthetics */
+.corner-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(18, 18, 22, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.corner-btn::before,
+.corner-btn::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.corner-btn::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #eab308;
+  border-left: 2px solid #eab308;
+}
+
+.corner-btn::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #eab308;
+  border-right: 2px solid #eab308;
+}
+
+.corner-btn:hover {
+  border-color: rgba(234, 179, 8, 0.8);
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.15);
+}
+
+.corner-btn:hover::before {
+  width: 10px;
+  height: 10px;
+  border-color: #facc15;
+}
+
+.corner-btn:hover::after {
+  width: 10px;
+  height: 10px;
+  border-color: #facc15;
+}
+
+/* Liquid Text Shimmer */
+@keyframes liquid-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.liquid-text {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #fef08a 25%,
+    #eab308 50%,
+    #fef08a 75%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: liquid-flow 6s ease-in-out infinite;
+}
+
+/* 3D Perspective Card Container */
+.perspective-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Custom Scrollbar for Luxury Dark UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #eab308;
+}
